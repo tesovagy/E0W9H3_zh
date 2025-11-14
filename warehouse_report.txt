@@ -1,0 +1,5 @@
+sajt: 1 db
+alma: 3000 db
+tej: 40000 db
+sass: 16 db
+2: 1 db

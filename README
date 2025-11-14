@@ -1,0 +1,64 @@
+Raktárkezelő Alkalmazás
+Projekt információ
+
+    Készítő: Ócsai Bálint
+    Neptunkód: E0W9H3
+    Monogram: OB
+    Dátum: 2025
+    Technológia: Python + tkinter
+
+Projekt célja:
+Egy Python alapú raktárkezelő alkalmazás fejlesztése grafikus felülettel, amely lehetővé teszi a termékek nyilvántartását, készletfigyelését és kezelését.
+
+Főbb funkciók
+    Termék kezelés
+
+        Hozzáadás - Új termék felvétele mennyiséggel és egyedi küszöbértékkel
+        Módosítás - Kattintás a listára, mezők automatikus kitöltése
+        Törlés - Teljes termék eltávolítása
+        Keresés - Automatikus szűrés gépelés közben
+
+    Intelligens készletfigyelő
+
+        Színes készletjelzés minden termékhez:
+
+            PIROS - Kevés készlet (≤ küszöbérték)
+            SÁRGA - Közepes készlet (küszöb+1 - küszöb×1,5)
+            ZÖLD - Sok készlet (> küszöb×4)
+
+        Termékenkénti küszöbérték - Minden terméknek saját értéke
+        Színjelmagyarázat - Külön ablak a státuszok magyarázatával
+
+    Adatkezelés
+
+        Automatikus mentés - JSON formátumban
+        Adatbetöltés - Alkalmazás indításakor
+
+Technikai részletek
+    Modulok és funkciók
+        warehouse_core_ob.py
+            class WarehouseOB:
+    def add_product_ob(name, quantity, threshold=10)
+    def remove_product_ob(name)
+    def get_stock_status_ob(name, quantity)
+    def get_threshold_ob(name)
+    def list_products_ob()
+    def search_product_ob(keyword)
+
+        file_io_ob.py
+    def load_data_ob(filepath="warehouse_data.json")
+    def save_data_ob(data, filepath="warehouse_data.json")
+    def export_report_ob(warehouse, filepath="warehouse_report.txt")
+    def export_csv_ob(warehouse, filepath="warehouse_report.csv")
+
+        gui_ob.py
+    def create_main_window_ob()
+
+Követelmények
+    Python: 3.6 vagy újabb
+    Könyvtárak:
+
+        tkinter (beépített)
+        json (beépített)
+        os (beépített)
+        Nincs külső függőség
